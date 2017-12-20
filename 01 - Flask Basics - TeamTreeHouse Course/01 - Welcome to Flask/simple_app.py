@@ -9,36 +9,20 @@
 #     return str(answer)
 
 from flask import Flask
+from flask import render_template
 
 app = Flask(__name__)
 
 @app.route('/')
 @app.route('/<name>')
 def index(name="Michael"):
-    return f"Hello, {name}"
+    return render_template("index.html", name=name)
 
 
 @app.route("/add/<int:num1>/<int:num2>/")
 def add(num1, num2):
-    answer = num1 + num2
-    return f"""
-    <!DOCTYPE html>
-    <html>
-        <head>
-            <title>Adding!
-            </title>
-        </head>
-        
-        <body>
-        <h1>
-        {num1} + {num2} = { num1 + num2 }
-        </h1>
-        </body>
-    
-    </html>
-    
-    
-    """
+    context = {'num1': num1, 'num2': num2}
+    return render_template("add.html", **context)
 
 
 
