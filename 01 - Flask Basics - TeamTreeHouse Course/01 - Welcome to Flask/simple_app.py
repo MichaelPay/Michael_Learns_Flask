@@ -16,7 +16,7 @@ app = Flask(__name__)
 @app.route('/')
 @app.route('/<name>')
 def index(name="Michael"):
-    return render_template("index.html", name=name)
+    return render_template("index.html", name=name.capitalize())
 
 
 @app.route("/add/<int:num1>/<int:num2>/")

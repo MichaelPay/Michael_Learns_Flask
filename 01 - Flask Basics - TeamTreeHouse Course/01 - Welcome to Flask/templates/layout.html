@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{% block title %}
-
-    {% endblock %}</title>
-</head>
-<body>
-{% block content %}
-{% endblock %}
-
-<br>
-&copy; 2017 Content brought to you by Michael Pay.
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            {% block title %}
+            {% endblock %}
+        </title>
+        <link rel="stylesheet" href="/static/styles.css">
+    </head>
+    <body>
+        <h1>
+            {% block content %}
+            {% endblock %}
+        </h1>
+        <br>
+        <h5>&copy; 2017 Content brought to you by Michael Pay.</h5>
+        {% block scripts %}
+        {% endblock %}
+    </body>
 </html>
