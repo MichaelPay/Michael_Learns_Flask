@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Adding!</title>
-</head>
-<body>
-    <h1>
-        {{ num1 }} + {{ num2 }} = {{ num1 + num2 }}
-    </h1>
-</body>
-</html>
+{% extends "layout.html" %}
+
+{% block title %}Howdy!{% endblock %}
+
+{% block content %}{{ num1 }} + {{ num2 }} = {{ num1 + num2 }}{% endblock %}
